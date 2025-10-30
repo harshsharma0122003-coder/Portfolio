@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
+/* ✅ Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Alice', serif;
+  background: #f4f7fa;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* ✅ Header */
+header {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: #fff;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header .container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  flex-wrap: wrap; /* ⚙️ Added to prevent overflow on small screens */
+}
+
+header h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap; /* ⚙️ Added for smaller screens */
+  justify-content: center;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+
+/* ✅ Sections */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1e3c72;
+  border-bottom: 2px solid #2a5298;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ✅ Skills */
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  justify-content: center; /* ⚙️ Center align for all screen sizes */
+}
+
+.skills-list li {
+  background-color: #e3ecf8;
+  color: #2a5298;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* ✅ Projects */
+.project {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #2a5298;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* ✅ Education */
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* ✅ Gallery */
+.gallery {
+  display: grid; /* ⚙️ Changed from flex to grid for responsive layout */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%; /* ⚙️ Auto adjust */
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ✅ Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+  max-width: 500px; /* ⚙️ Limit width on big screens */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form input, form textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Alice', serif;
+  width: 100%; /* ⚙️ Full width responsive */
+}
+
+form button {
+  background-color: #2a5298;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #1e3c72;
+}
+
+#formResponse {
+  margin-top: 10px;
+  font-weight: 500;
+  color: green;
+}
+
+/* ✅ Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1e3c72;
+  color: #fff;
+  margin-top: 40px;
+}
+
+/* ✅ Default desktop container */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ✅ Responsive Layouts */
+
+/* --- Tablet screens (1024px and below) --- */
+@media (max-width: 1024px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
+/* --- Mobile screens (768px and below) --- */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .skills-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .section {
+    padding: 30px 10px;
+  }
+
+  p, li {
+    font-size: 15px;
+  }
+}
+
+/* --- Extra small screens (480px and below) --- */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  nav ul li {
+    margin-left: 0;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
